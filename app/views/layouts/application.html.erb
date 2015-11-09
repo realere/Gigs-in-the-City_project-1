@@ -7,12 +7,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<div class='login'>
+  <% if current_user %>
+    <%= current_user.email %>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to "Sign In", new_user_session_path %>
+    <%= link_to "Register", new_user_registration_path %>
+  <% end %>
+</div>
 <nav>
   <li><%= link_to "home", root_path%></li>
   <li><%= link_to "categories", categories_path %></li>
   <li><%= link_to "events", events_path %></li>
   <li><%= link_to "venues", venues_path %></li>
   <li><%= link_to "artists", artists_path %></li>
+  <li><%= link_to "tickets", tickets_path %></li>
 </nav>
 
 <%= yield %>

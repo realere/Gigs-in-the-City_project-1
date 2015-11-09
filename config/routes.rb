@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :events
   resources :venues
   resources :artists
   resources :categories
+  resources :tickets
+
 
 
 
@@ -13,6 +16,7 @@ Rails.application.routes.draw do
     get '/search', to: 'home#search'
     get '/venues', to: 'home#venues'
     get '/artists', to: 'home#artists '
+    get '/Tickets', to: 'home#tickets'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
