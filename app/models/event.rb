@@ -1,4 +1,5 @@
 class Event < ActiveRecord::Base
+  mount_uploader :event_image, EventImageUploader
   belongs_to :venue
   belongs_to :artist
 

@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :event_id %><br>
-    <%= f.number_field :event_id %>
+    <%= f.select(:event_id, Event.all.collect {|e| [ e.name, e.id ] }, {prompt: 'Select Event'}) %>
   </div>
   <div class="field">
     <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+    <%= f.select(:user_id, User.all.collect {|u| [ u.email, u.id ] }, {prompt: 'Select User'}) %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -17,6 +17,7 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
+      <td><%= image_tag recipe.recipe_image.url %></td>
         <td><%= event.venue.address %></td>
         <td><%= event.artist.name %></td>
         <td><%= event.human_readable_time %></td>

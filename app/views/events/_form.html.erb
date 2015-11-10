@@ -16,6 +16,10 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label :event_image %><br />
+    <%= f.file_field :event_image %>
+  </div>
+  <div class="field">
     <%= f.label :venue_id %><br>
     <%= f.select(:venue_id, Venue.all.collect {|v| [ v.address, v.id ] }, {prompt: 'Select Venue'}) %>
   </div>

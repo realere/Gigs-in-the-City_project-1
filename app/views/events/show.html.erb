@@ -9,7 +9,10 @@
   <strong>Venue:</strong>
   <%= @event.venue.address %>
 </p>
-
+  <p>
+    <b>Image:</b>
+    <%= image_tag @recipe.recipe_image.url %>
+</p>
 <p>
   <strong>Artist:</strong>
   <%= @event.artist.name %>
