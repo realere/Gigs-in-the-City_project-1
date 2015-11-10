@@ -2,12 +2,12 @@
 
 <p>
   <strong>Event:</strong>
-  <%= @ticket.event.addess %>
+  <%= @ticket.event.venue.address %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @ticket.user.name %>
+  <%= @ticket.user.email %>
 </p>
 
 <%= link_to 'Edit', edit_ticket_path(@ticket) %> |
