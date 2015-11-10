@@ -16,6 +16,6 @@
     <%= f.select(:event_id, Event.all.collect {|e| [ e.name, e.id ] }, {prompt: 'Select Event'}) %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Book Ticket!"%>
   </div>
 <% end %>
