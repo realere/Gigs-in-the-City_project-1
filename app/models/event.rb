@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
   belongs_to :venue
   belongs_to :artist
 
- def human_readable_date
+   def human_readable_date
      timetable_date.strftime('%A, %B %d %Y')
    end
 

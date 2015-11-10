@@ -21,9 +21,14 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :image %><br>
-    <%= f.text_field :image %>
+    <%= f.label :artist_image %><br />
+    <%= f.file_field :artist_image %>
   </div>
+  <div class="field">
+    <%= f.label :remote_artist_image_url %><br />
+    <%= f.text_field :remote_artist_image_url %>
+  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
