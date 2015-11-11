@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::Base
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_path, alert: "You can't access this page"
+  end
   def after_sign_in_path_for(resource)
     events_path
   end

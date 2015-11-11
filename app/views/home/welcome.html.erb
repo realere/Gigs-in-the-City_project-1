@@ -5,7 +5,11 @@
   <p> Search for Artist and events </p>
   <%= text_field_tag :options %>
   <%=submit_tag "Search!" %>
-
-  
+ 
+ <li><%= link_to "clink here to view categories", categories_path %></li>
+ <li><%= link_to "clink here for all events", events_path %></li>
+ <li><%= link_to "clink here for all venues", venues_path %></li>
+ <li><%= link_to "clink here for artists performing", artists_path %></li>
+<li><%= link_to "Clink here to view and book tickets", tickets_path %></li>
 
 <% end %>

@@ -8,7 +8,7 @@ class Ability
       can :manage, :all
     else
       can :read, Event
-      can :book, Ticket
+      can :create, Ticket
     end
     # Define abilities for the passed in user here. For example:
     #

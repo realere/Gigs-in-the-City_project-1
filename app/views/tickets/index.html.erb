@@ -24,10 +24,10 @@
         <td><%= ticket.event.artist.name %></td>
         <td><%= ticket.event.human_readable_time %></td>
         <td><%= ticket.event.human_readable_date %></td>
-        <td><%= ticket.event.venue.capacity %></td>
-        <td><%= link_to 'Show', ticket %></td>
-        <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
-        <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= ticket.availability(ticket.event.id) %></td>
+        <td><%= link_to 'See details', ticket %></td>
+        <td><%= link_to 'Edit', edit_ticket_path(ticket)  if can? :edit, ticket%></td>
+        <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } if can? :destroy, ticket%></td>
       </tr>
     <% end %>
   </tbody>

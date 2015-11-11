@@ -9,7 +9,8 @@ class Ticket < ActiveRecord::Base
    def max_capacity  
      event.venue.capacity
    end
-
+   
+   
    def self.booked(id)
      where(event_id: id).count
    end
@@ -24,13 +25,6 @@ class Ticket < ActiveRecord::Base
      timetable_date.strftime('%H:%M')
    end
    
-   def booked(ticket)
-     if @ticket.save
-       ticket.capacity - 1
-     else
-      ticket.capacity
-       end
-   end
   
   
 end
