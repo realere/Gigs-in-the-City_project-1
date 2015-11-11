@@ -2,13 +2,31 @@
 
 <p>
   <strong>Event:</strong>
+  <%= @ticket.event.name %>
+</p>
+<p>
+  <strong>Venue:</strong>
   <%= @ticket.event.venue.address %>
+</p>
+<p>
+  <strong>Artist:</strong>
+  <%= @ticket.event.artist.name %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @ticket.user.email %>
+  <strong>Date:</strong>
+  <%= @ticket.event.human_readable_date %>
 </p>
+<p>
+  <strong>Start Time:</strong>
+  <%= @ticket.event.human_readable_time %>
+</p>
+<p>
+  <strong>Price:</strong>
+  <%= @ticket.event.price %>
+</p>
+
+
 
 <%= link_to 'Edit', edit_ticket_path(@ticket) %> |
 <%= link_to 'Back', tickets_path %>

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :artists
   resources :categories
   resources :tickets
+  # resources :whats_on
 
 
 
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
     get '/venues', to: 'home#venues'
     get '/artists', to: 'home#artists '
     get '/Tickets', to: 'home#tickets'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,10 +1,12 @@
 <h1>Welcome to Groovy people festival Gigs!</h1>
 
 
+
 <%= form_tag(search_path, method: :get) do %>
   <p> Search for Artist and events </p>
   <%= text_field_tag :options %>
   <%=submit_tag "Search!" %>
+
  
  <li><%= link_to "clink here to view categories", categories_path %></li>
  <li><%= link_to "clink here for all events", events_path %></li>

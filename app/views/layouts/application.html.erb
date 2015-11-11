@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head <meta name="viewport" content="width=device-width, initial-scale=1">>
   <title>GigsBooking</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="container"
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
@@ -21,10 +22,12 @@
 </div>
 <nav>
   <li><%= link_to "home", root_path%></li>
-  
 </nav>
 
 <%= yield %>
-
+<div id="footer">
+  copyright &copy; 2015 Ere Samuel
+</div>
+</div>
 </body>
 </html>
