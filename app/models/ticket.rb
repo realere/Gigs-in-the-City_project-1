@@ -2,6 +2,10 @@ class Ticket < ActiveRecord::Base
   belongs_to :user
   belongs_to :event
 
+  def availability(id)
+    max_capacity - Ticket.booked(id)                   
+  end
+  
    def max_capacity  
      event.venue.capacity
    end
@@ -10,9 +14,7 @@ class Ticket < ActiveRecord::Base
      where(event_id: id).count
    end
 
-   def availability(id)
-     max_capacity - Booking.booked(id)                   
-   end
+   
 
    def human_readable_date
      timetable_date.strftime('%A, %B %d %Y')
@@ -21,7 +23,14 @@ class Ticket < ActiveRecord::Base
    def human_readable_time
      timetable_date.strftime('%H:%M')
    end
-
-
+   
+   def booked(ticket)
+     if @ticket.save
+       ticket.capacity - 1
+     else
+      ticket.capacity
+       end
+   end
+  
   
 end

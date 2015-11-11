@@ -38,6 +38,7 @@ class TicketsController < ApplicationController
     end
   end
 
+
   # PATCH/PUT /tickets/1
   # PATCH/PUT /tickets/1.json
   def update
@@ -63,6 +64,9 @@ class TicketsController < ApplicationController
   end
 
   private
+  def availability(id)
+    max_capacity - Ticket.booked(id)                   
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_ticket
       @ticket = Ticket.find(params[:id])
